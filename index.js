@@ -1,8 +1,8 @@
-var userInputs = document.querySelectorAll(".input");
+var userInputs = document.querySelectorAll(".input"); 
 var btn = document.querySelector("#btn");
 var messageBox = document.querySelector(".message-box");
 var message = document.getElementById("message");
-var profitLossGIF = document.querySelector(".gif-overlay")
+var profitLossGIF = document.querySelector(".gif-overlay");
 
 btn.addEventListener("click", clickHandler);
 
@@ -24,14 +24,14 @@ function clickHandler() {
       profitLossGIF.style.background = 'url(img/confetti-10.gif)';
     }else{
       var loss = (buyPrice - currentPrice)* quantity;
-      var lossPercentage = ((loss/buyPrice)*100)/quantity
+      var lossPercentage = ((loss/buyPrice)*100)/quantity;
       messageBox.classList.remove("hidden");
       message.innerHTML ="You lost "+ lossPercentage +"%. Your total loss is ₹ "+ loss;
       profitLossGIF.style.background = 'url(img/warning.gif)';
     }
-  } else {
+  }else {
     profitLossGIF.style.background = 'url()';
     messageBox.classList.remove("hidden");
-    message.innerHTML ="Please enter values greater than 0 (only numbers are allowed in above fields";
+    message.innerHTML ="Please enter values greater than 0 (only numbers are allowed in above fields)";
   }
 }
